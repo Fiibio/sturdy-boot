@@ -44,7 +44,7 @@ public class SyncContainer2 {
                 for (int i = 0; i < 10; i++) {
                     sc.add(new Object());
                     if(sc.size()==5){
-                        o.notify();//但是notify不会释放锁，这样就导致线程2 只有等线程1 执行完才能拿到锁
+                        o.notify();//但是notify不会释放锁，这样就导致线程2 只有等线程1 执行完才能尝试拿到锁
                     }
                     try {
                         Thread.sleep(700);
